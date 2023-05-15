@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>{{ title }}</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{ title }}</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- Team work message-->
+        <section class="section dashboard">
+            <center>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{% static 'core/img/data-report.png' %}" class="logo" alt="itss"
+                             style="width: 70%; height: 100%;">
+                    </div>
+                    <h3 class="col-4 align-content-stretch">
+                        <strong>“Si tu negocio no está en Internet, tu negocio no existe.”</strong>. — Bill Gates
+                    </h3>
+                </div>
+            </center>
+            <br><br>
+        </section>
+
+        <!-- Celdas CCS-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Celdas | <strong>Caracas</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                            <th scope="col" class="text-primary">Coordenadas</th>
+                                            <th scope="col" class="text-primary">Altura</th>
+                                            <th scope="col" class="text-primary">Contacto</th>
+                                            <th scope="col" class="text-primary">Numero</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdas_ccs %}
+                                            <tr>
+                                                <td>{{ x.CellCity }}</td>
+                                                <td>{{ x.CellName }}</td>
+                                                <td>{{ x.CellAddress }}</td>
+                                                <td>{{ x.CellCoord }}</td>
+                                                <td>{{ x.CellHeight }} Mts</td>
+                                                <td>{{ x.CellContact }}</td>
+                                                <td>{{ x.CellContactNumber }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Celdas GUA-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Celdas | <strong>Guatire-Guarenas</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                            <th scope="col" class="text-primary">Coordenadas</th>
+                                            <th scope="col" class="text-primary">Altura</th>
+                                            <th scope="col" class="text-primary">Contacto</th>
+                                            <th scope="col" class="text-primary">Numero</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdas_gua %}
+                                            <tr>
+                                                <td>{{ x.CellCity }}</td>
+                                                <td>{{ x.CellName }}</td>
+                                                <td>{{ x.CellAddress }}</td>
+                                                <td>{{ x.CellCoord }}</td>
+                                                <td>{{ x.CellHeight }} Mts</td>
+                                                <td>{{ x.CellContact }}</td>
+                                                <td>{{ x.CellContactNumber }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Celdas HIG-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Celdas | <strong>Higuerote</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                            <th scope="col" class="text-primary">Coordenadas</th>
+                                            <th scope="col" class="text-primary">Altura</th>
+                                            <th scope="col" class="text-primary">Contacto</th>
+                                            <th scope="col" class="text-primary">Numero</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdas_hig %}
+                                            <tr>
+                                                <td>{{ x.CellCity }}</td>
+                                                <td>{{ x.CellName }}</td>
+                                                <td>{{ x.CellAddress }}</td>
+                                                <td>{{ x.CellCoord }}</td>
+                                                <td>{{ x.CellHeight }} Mts</td>
+                                                <td>{{ x.CellContact }}</td>
+                                                <td>{{ x.CellContactNumber }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Celdas CAU-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Celdas | <strong>Caucagua</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                            <th scope="col" class="text-primary">Coordenadas</th>
+                                            <th scope="col" class="text-primary">Altura</th>
+                                            <th scope="col" class="text-primary">Contacto</th>
+                                            <th scope="col" class="text-primary">Numero</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdas_cau %}
+                                            <tr>
+                                                <td>{{ x.CellCity }}</td>
+                                                <td>{{ x.CellName }}</td>
+                                                <td>{{ x.CellAddress }}</td>
+                                                <td>{{ x.CellCoord }}</td>
+                                                <td>{{ x.CellHeight }} Mts</td>
+                                                <td>{{ x.CellContact }}</td>
+                                                <td>{{ x.CellContactNumber }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% block title %} Charts {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Statistics</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Reports 1-->
+                <div class="col-12">
+                    <div class="card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Monthly Average POS Activity <span></span></h5>
+
+                            <!-- Line Chart -->
+                            <div id="container1">
+                                <div id="reportsChart"></div>
+                            </div>
+
+                            <script>
+                                Highcharts.setOptions({
+                                    colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+                                        return {
+                                            radialGradient: {
+                                                cx: 0.5,
+                                                cy: 0.3,
+                                                r: 0.7
+                                            },
+                                            stops: [
+                                                [0, color],
+                                                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')]
+                                            ]
+                                        };
+                                    })
+                                });
+                                Highcharts.chart('reportsChart', {
+                                    chart: {
+                                        type: 'column'
+                                    },
+                                    title: {
+                                        text: ''
+                                    },
+                                    credits: {
+                                        enabled: false
+                                    },
+                                    xAxis: {
+                                        categories: [
+                                            'Jan',
+                                            'Feb',
+                                            'Mar',
+                                            'Apr',
+                                            'May',
+                                            'Jun',
+                                            'Jul',
+                                            'Aug',
+                                            'Sep',
+                                            'Oct',
+                                            'Nov',
+                                            'Dec'
+                                        ],
+                                        crosshair: true
+                                    },
+                                    yAxis: {
+                                        min: 0,
+                                        title: {
+                                            text: 'Amount'
+                                        }
+                                    },
+                                    tooltip: {
+                                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                                        footerFormat: '</table>',
+                                        shared: true,
+                                        useHTML: true
+                                    },
+                                    plotOptions: {
+                                        column: {
+                                            pointPadding: 0.2,
+                                            borderWidth: 0
+                                        }
+                                    },
+                                    series: [{
+                                        name: 'Creditcard',
+                                        data: [59.9, 61.5, 104.1, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+                                    }, {
+                                        name: 'Banesco',
+                                        data: [83.6, 78.8, 98.5, 93.4, 94.1, 84.5, 105.0, 74.6, 71.2, 83.5, 76.6, 82.3]
+
+                                    }, {
+                                        name: 'BNC',
+                                        data: [78.9, 77.8, 89.3, 69.4, 76.9, 83.6, 91.0, 89.6, 72.4, 75.2, 89.3, 81.2]
+
+                                    }, {
+                                        name: 'Others',
+                                        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+                                    }]
+                                });
+                            </script>
+                            <!-- End Line Chart -->
+
+                        </div>
+
+                    </div>
+                </div><!-- End Reports -->
+
+                <!-- Reports 2-->
+                <div class="col-12">
+                    <div class="card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">All</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">POS General Status Today<span></span></h5>
+
+                            <!-- Line Chart -->
+                            <div id="container1">
+                                <div id="reportsChart2"></div>
+                            </div>
+
+                            <script>
+                                Highcharts.chart('reportsChart2', {
+                                    chart: {
+                                        type: 'column'
+                                    },
+                                    title: {
+                                        text: ''
+                                    },
+                                    xAxis: {
+                                        categories: ['Active', 'No Active']
+                                    },
+                                    credits: {
+                                        enabled: false
+                                    },
+                                    series: [{
+                                        name: 'Creditcard',
+                                        data: [789, -85]
+                                    }, {
+                                        name: 'Banesco',
+                                        data: [673, -81]
+                                    }, {
+                                        name: 'BNC',
+                                        data: [954, -79]
+                                    }, {
+                                        name: 'Others',
+                                        data: [537, -97]
+                                    }]
+                                });
+                            </script>
+                            <!-- End Line Chart -->
+
+                        </div>
+
+                    </div>
+                </div><!-- End Reports -->
+
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

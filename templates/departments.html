@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>{{ title }}</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{ title }}</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- Team work message-->
+        <section class="section dashboard">
+            <center>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{% static 'core/img/team-spirit.png' %}" class="logo" alt="itss"
+                             style="width: 70%; height: 70%;">
+                    </div>
+                    <h3 class="col-4 align-content-stretch">
+                        <strong>“Seamos los líderes que hubiéramos deseado tener”</strong>. — Simon Sinek, escritor y
+                        orador motivacional
+                    </h3>
+                </div>
+            </center>
+
+
+        </section>
+
+        <!-- Departamentos-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Direccion</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in departments %}
+                                            <tr>
+                                                <td>{{ x.DepartmentName }}</td>
+                                                <td>{{ x.DepartmentEmail }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

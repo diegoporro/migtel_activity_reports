@@ -1,0 +1,112 @@
+{#{% load staticfiles %}#}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} | pos server</title>
+
+    {% load static %}
+    <link href="{% static "core/img/migtel.png" %}" rel="icon">
+    <!-- bootstrap core css-->
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <!-- custom fonts for this template-->
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- custom styles for this template-->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" type="text/css">
+    <!-- custom styles for this template-->
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="bg-light" oncopy="return false" oncut="return false" onpaste="return false">
+
+<main>
+
+    <div class="container">
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <center><img src="{% static 'core/img/migtel.png' %}" class="logo" alt="itss"
+                             style="width: 10%; height: 10%;"></center>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center"><br>
+                        {#              <div class="d-flex justify-content-center py-4">#}
+                        {#                <a href="#" class="logo d-flex align-items-center w-auto">#}
+                        {#                  <span class="d-none d-lg-block" style="text-shadow: lightgray 2px 2px">POS SERVER</span>#}
+                        {#                </a>#}
+                        {#              </div><!-- end logo -->#}
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Bienvenido</h5>
+                                </div>
+                                <form class="row g-3 needs-validation" novalidate method="post">
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <br>
+                                    <button class="btn btn-primary btn-block" type="submit"
+                                            style="box-shadow: lightgray 2px 2px 2px;"><b>Sign in</b></button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="credits">
+                            <div class="text-center"><br>
+                                <h6 class="text-dark">{{ localtime }}</h6><br>
+                                <small style=color:#868e96;">© 2023 Comunicaciones Migtel C.A.</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- end #main -->
+
+{#<div class="container">#}
+{#    <div class="card card-login mx-auto mt-5" style="box-shadow: lightgray 1px 1px;">#}
+{#        <div class="card-header text-center"><h4>log in</h4></div>#}
+{#        <div class="card-body">#}
+{#            {% block content %}#}
+{#                <form method="post">#}
+{#                    {% csrf_token %}#}
+{#                    {{ form }}#}
+{#                    <br>#}
+{#                    <button class="btn btn-primary btn-block" type="submit" style="box-shadow: lightgray 2px 2px;"><b>sign in</b></button>#}
+{#                </form>#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="container">#}
+{#    <div class="text-center">#}
+{#        <h6 class="text-dark">{{ localtime }}</h6><br>#}
+{#        <small style=color:#868e96;">© 2019 it security solutions</small>#}
+{#        <small style=color:#868e96;">powered by pos server c.a.<img src="{% static 'core/img/pos.png' %}" width="3%" height="3%"></small>#}
+{#    </div>#}
+{#</div>#}
+
+
+<!-- bootstrap core javascript-->
+<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- core plugin javascript-->
+<script src="{% static 'core/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+
+<!-- template main js file -->
+<script src="{% static "core/js/main.js" %}"></script>
+<script>
+    if (history.forward(0)) {
+        history.replace(history.forward(0));
+    }
+</script>
+
+</body>
+</html>

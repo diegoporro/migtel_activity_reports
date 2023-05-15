@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>{{ title }}</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{ title }}</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- Asignacion de Actividades-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de ultimas actividades asignadas</h1><br>
+
+                                    {#                                    <center>#}
+{#                                    <div class="card col-md-8">#}
+
+                                        <div class="card col-md-8 card-body"><br>
+
+                                            <form class="row g-2 needs-validation" novalidate method="post">
+                                                {% csrf_token %}
+                                                {{ form }}
+                                                <br>
+                                                <button class="btn btn-primary btn-block row-cols-md-5" type="submit"
+                                                        style="box-shadow: lightgray 2px 2px 2px; text-shadow: darkblue 1px 1px 1px"><b>Asignar</b>
+                                                </button>
+                                            </form>
+
+                                        </div>
+                                        {#                                    </center>#}
+{#                                    </div>#}
+                                </div>
+                            </div><!-- End Recent Sales -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

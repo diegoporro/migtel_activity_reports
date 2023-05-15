@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html><title>{% block title %}{% endblock %} | Actitivity Reports</title>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static "core/img/migtel.png" %}" rel="icon">
+{#    <link href="{% static "core/img/apple-touch-icon.png" %}" rel="apple-touch-icon">#}
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static "core/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/quill/quill.snow.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/quill/quill.bubble.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/remixicon/remixicon.css" %}" rel="stylesheet">
+    <link href="{% static "core/vendor/simple-datatables/style.css" %}" rel="stylesheet">
+    <script src="{% static 'core/js/jquery.min.js' %}"></script>
+    <script src="{% static "core/js/highcharts.js" %}"></script>
+    <script src="{% static "core/js/highcharts-3D.js" %}"></script>
+    <script src="{% static "core/js/exporting.js" %}"></script>
+
+    <!-- Template Main CSS File -->
+    <link href="{% static "core/css/style.css" %}" rel="stylesheet">
+</head>
+<body>
+<div class="bg-white" id="layoutError"><br><br>
+    <div id="layoutError_content">
+        <main>
+            <div class="container-xl px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center mt-4">
+                            <img
+                                class="img-fluid p-4"
+                                src="{% static "core/img/404-error.png" %}"
+                                alt=""
+                                style="width: 500%; height: 100%;"
+                            />
+                            <p class="lead"><br>
+                                This requested URL was not found on this server.
+                            </p><br>
+                            <a class="text-arrow-icon" href="{% url 'dashboard' %}"
+                                >Return to Dashboard</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div><br><br><br><br>
+
+{#    <footer id="footer" class="footer">#}
+{#    <div class="copyright">#}
+{#        &copy;Copyright <strong><span>Comunicaciones Migtel C.A</span></strong>. All Rights Reserved#}
+{#    </div>#}
+{#</footer><!-- End Footer -->#}
+
+    <div id="footer" class="footer">
+        <footer class="footer-admin mt-auto footer-light">
+            <div class="container-fluid px-4">
+                <div class="row gx-4">
+                    <center><div class="col-md-6 small">
+                        Copyright &copy; Comunicaciones Migtel C.A. RIF: J-40212711-1
+                    </div></center>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

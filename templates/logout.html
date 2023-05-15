@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | POS Server</title>
+
+    {% load static %}
+    <link href="{% static "core/img/pos.png" %}" rel="icon">
+    <!-- Bootstrap core CSS-->
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="banner">
+    <img src="{% static 'core/img/pos.png' %}" class="logo">
+</div>
+
+<h2> Has cerrado sesión </h2>
+<br>
+<h4> Vuelve al login para iniciar sesion nuevamente </h4>
+<h3>{{ localtime }}</h3>
+
+
+<div class="copy">
+    &copy; 2022 POS Server
+</div>
+
+</body>
+</html>

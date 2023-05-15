@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">POS Logs</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Logs Actividades Asignadas</h5><br>
+{#                                    <img src="https://i.imgur.com/t6n9F0M.png">#}
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Actividad</th>
+                                            <th scope="col">Contratistas</th>
+                                            <th scope="col">Celda</th>
+                                            <th scope="col">Fecha Asignada</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row"><a href="#">70617218</a></th>
+                                            <td>SEGUROS NUEVO MUNDO S A</td>
+                                            <td><a href="#" class="text-primary">12256CT31102922 [00108] ICT220
+                                                (LAN/DIAL_UP)</a></td>
+                                            <td>$8621.31</td>
+                                            <td><span class="badge bg-success">Approved</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="#">70597918</a></th>
+                                            <td>CLINICA PUERTO PIRITU C A</td>
+                                            <td><a href="#" class="text-primary">522349091 [00098] Vx510 (DIAL) PCI</a>
+                                            </td>
+                                            <td>$1639.03</td>
+                                            <td><span class="badge bg-success">Approved</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="#">70242117</a></th>
+                                            <td>OPTICA ANGOSTURA C A</td>
+                                            <td><a href="#" class="text-primary">214890060 [00098] Vx510 (DIAL) PCI</a>
+                                            </td>
+                                            <td>$143.87</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="#">70596610</a></th>
+                                            <td>TIENDAS LA MILAGROSA C A</td>
+                                            <td><a href="#" class="text-primar">2L078638 [00117] PAX S80 (DIAL)</a></td>
+                                            <td>$67.06</td>
+                                            <td><span class="badge bg-danger">Rejected</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="#">70335352</a></th>
+                                            <td>PICARETA ANTONIO JOSE</td>
+                                            <td><a href="#" class="text-primary">12247CT31095405 [00108] ICT220
+                                                (LAN/DIAL_UP)</a></td>
+                                            <td>$983.19</td>
+                                            <td><span class="badge bg-success">Approved</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+
+                </div>
+
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

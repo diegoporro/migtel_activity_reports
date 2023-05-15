@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>{{ title }}</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{ title }}</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- Ultimas asignaciones-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de ultimas actividades asignadas</h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Actividad</th>
+                                            <th scope="col" class="text-primary">Celda</th>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Cliente</th>
+                                            <th scope="col" class="text-primary">Contratistas</th>
+                                            <th scope="col" class="text-primary">Fecha Asignado</th>
+                                            <th scope="col" class="text-primary">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in act %}
+                                            <tr>
+                                                <td>{{ x.Act }}</td>
+                                                <td>{{ x.Celda }}</td>
+                                                <td>{{ x.Ciudad }}</td>
+                                                <td>{{ x.Cliente }}</td>
+                                                <td>{{ x.Person1 }}
+                                                    {% if x.Person2 == "None" %}
+                                                    {% elif x.Person2 %}
+                                                        | {{ x.Person2 }}
+                                                    {% endif %}
+                                                    {% if x.Person3 == "None" %}
+                                                    {% elif x.Person3 %}
+                                                        | {{ x.Person3 }}
+                                                    {% endif %}
+                                                    {% if x.Person4 == "None" %}
+                                                    {% elif x.Person4 %}
+                                                        | {{ x.Person4 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ x.DateAsig }}</td>
+
+                                                {% if x.Status == "COMPLETADO" %}
+                                                    <td><span class="badge bg-success">{{ x.Status }}</span></td>
+
+                                                {% elif x.Status == "ASIGNADO" %}
+                                                    <td><span class="badge bg-warning">{{ x.Status }}</span></td>
+                                                {% else %}
+                                                    <td><span class="badge bg-danger">{{ x.Status }}</span></td>
+                                                {% endif %}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Soportes-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de soportes asignados</h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Actividad</th>
+                                            <th scope="col" class="text-primary">Celda</th>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Cliente</th>
+                                            <th scope="col" class="text-primary">Contratistas</th>
+                                            <th scope="col" class="text-primary">Fecha Asignado</th>
+                                            <th scope="col" class="text-primary">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in soportes %}
+                                            <tr>
+                                                <td>{{ x.Act }}</td>
+                                                <td>{{ x.Celda }}</td>
+                                                <td>{{ x.Ciudad }}</td>
+                                                <td>{{ x.Cliente }}</td>
+                                                <td>{{ x.Person1 }}
+                                                    {% if x.Person2 == "None" %}
+                                                    {% elif x.Person2 %}
+                                                        | {{ x.Person2 }}
+                                                    {% endif %}
+                                                    {% if x.Person3 == "None" %}
+                                                    {% elif x.Person3 %}
+                                                        | {{ x.Person3 }}
+                                                    {% endif %}
+                                                    {% if x.Person4 == "None" %}
+                                                    {% elif x.Person4 %}
+                                                        | {{ x.Person4 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ x.DateAsig }}</td>
+
+                                                {% if x.Status == "COMPLETADO" %}
+                                                    <td><span class="badge bg-success">{{ x.Status }}</span></td>
+
+                                                {% elif x.Status == "ASIGNADO" %}
+                                                    <td><span class="badge bg-warning">{{ x.Status }}</span></td>
+                                                {% else %}
+                                                    <td><span class="badge bg-danger">{{ x.Status }}</span></td>
+                                                {% endif %}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Instalaciones-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de instalaciones asignadas</h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Actividad</th>
+                                            <th scope="col" class="text-primary">Celda</th>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Cliente</th>
+                                            <th scope="col" class="text-primary">Contratistas</th>
+                                            <th scope="col" class="text-primary">Fecha Asignado</th>
+                                            <th scope="col" class="text-primary">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in inst %}
+                                            <tr>
+                                                <td>{{ x.Act }}</td>
+                                                <td>{{ x.Celda }}</td>
+                                                <td>{{ x.Ciudad }}</td>
+                                                <td>{{ x.Cliente }}</td>
+                                                <td>{{ x.Person1 }}
+                                                    {% if x.Person2 == "None" %}
+                                                    {% elif x.Person2 %}
+                                                        | {{ x.Person2 }}
+                                                    {% endif %}
+                                                    {% if x.Person3 == "None" %}
+                                                    {% elif x.Person3 %}
+                                                        | {{ x.Person3 }}
+                                                    {% endif %}
+                                                    {% if x.Person4 == "None" %}
+                                                    {% elif x.Person4 %}
+                                                        | {{ x.Person4 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ x.DateAsig }}</td>
+
+                                                {% if x.Status == "COMPLETADO" %}
+                                                    <td><span class="badge bg-success">{{ x.Status }}</span></td>
+
+                                                {% elif x.Status == "ASIGNADO" %}
+                                                    <td><span class="badge bg-warning">{{ x.Status }}</span></td>
+                                                {% else %}
+                                                    <td><span class="badge bg-danger">{{ x.Status }}</span></td>
+                                                {% endif %}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Celdas Full-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de dias de celda asignados</h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Actividad</th>
+                                            <th scope="col" class="text-primary">Celda</th>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Contratistas</th>
+                                            <th scope="col" class="text-primary">Fecha Asignado</th>
+                                            <th scope="col" class="text-primary">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdafull %}
+                                            <tr>
+                                                <td>{{ x.Act }}</td>
+                                                <td>{{ x.Celda }}</td>
+                                                <td>{{ x.Ciudad }}</td>
+                                                <td>{{ x.Person1 }}
+                                                    {% if x.Person2 == "None" %}
+                                                    {% elif x.Person2 %}
+                                                        | {{ x.Person2 }}
+                                                    {% endif %}
+                                                    {% if x.Person3 == "None" %}
+                                                    {% elif x.Person3 %}
+                                                        | {{ x.Person3 }}
+                                                    {% endif %}
+                                                    {% if x.Person4 == "None" %}
+                                                    {% elif x.Person4 %}
+                                                        | {{ x.Person4 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ x.DateAsig }}</td>
+
+                                                {% if x.Status == "COMPLETADO" %}
+                                                    <td><span class="badge bg-success">{{ x.Status }}</span></td>
+
+                                                {% elif x.Status == "ASIGNADO" %}
+                                                    <td><span class="badge bg-warning">{{ x.Status }}</span></td>
+                                                {% else %}
+                                                    <td><span class="badge bg-danger">{{ x.Status }}</span></td>
+                                                {% endif %}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Celdas Media-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Activity list-->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Logs de medios dias de celda</h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Actividad</th>
+                                            <th scope="col" class="text-primary">Celda</th>
+                                            <th scope="col" class="text-primary">Ciudad</th>
+                                            <th scope="col" class="text-primary">Contratistas</th>
+                                            <th scope="col" class="text-primary">Fecha Asignado</th>
+                                            <th scope="col" class="text-primary">Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in celdamedia %}
+                                            <tr>
+                                                <td>{{ x.Act }}</td>
+                                                <td>{{ x.Celda }}</td>
+                                                <td>{{ x.Ciudad }}</td>
+                                                <td>{{ x.Person1 }}
+                                                    {% if x.Person2 == "None" %}
+                                                    {% elif x.Person2 %}
+                                                        | {{ x.Person2 }}
+                                                    {% endif %}
+                                                    {% if x.Person3 == "None" %}
+                                                    {% elif x.Person3 %}
+                                                        | {{ x.Person3 }}
+                                                    {% endif %}
+                                                    {% if x.Person4 == "None" %}
+                                                    {% elif x.Person4 %}
+                                                        | {{ x.Person4 }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ x.DateAsig }}</td>
+
+                                                {% if x.Status == "COMPLETADO" %}
+                                                    <td><span class="badge bg-success">{{ x.Status }}</span></td>
+
+                                                {% elif x.Status == "ASIGNADO" %}
+                                                    <td><span class="badge bg-warning">{{ x.Status }}</span></td>
+                                                {% else %}
+                                                    <td><span class="badge bg-danger">{{ x.Status }}</span></td>
+                                                {% endif %}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

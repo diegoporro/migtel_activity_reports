@@ -1,0 +1,482 @@
+{% extends 'base.html' %}
+{% block title %} Logs {% endblock %}
+{% load static %}
+
+{% block contenido %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>{{ title }}</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{ title }}</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+            <section class="section dashboard">
+            <center>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{% static 'core/img/statistics.png' %}" class="logo" alt="itss"
+                             style="width: 70%; height: 100%;">
+                    </div>
+                    <h3 class="col-4 align-content-stretch">
+                        <strong>“La fuerza del equipo viene de cada miembro. La fuerza de cada miembro es el equipo.”</strong>. — Phil Jackson
+                    </h3>
+                </div>
+            </center>
+            <br><br>
+        </section>
+
+        <!-- Directores-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Direccion</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in direccion %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Direccion</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Administracion-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Administracion</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in admin %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Administracion</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Ventas-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Ventas</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in ventas %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Ventas</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Ing-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Ingenieria</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in ing %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Ingenieria</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Soporte-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Soporte</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in soporte %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Soporte</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- FO-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Fibra Optica</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in fo %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Fibra Optica</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- RRHH-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Recursos Humanos</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in rrhh %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">RRHH</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+        <!-- Contratistas-->
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Report 4 -->
+                <div class="col-12">
+                    <div class="card">
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="card-body">
+                                    <h1 class="card-title">Departamento | <strong>Contratista</strong></h1><br>
+                                    <table class="table table-borderless datatable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" class="text-primary">Departamento</th>
+                                            <th scope="col" class="text-primary">Nombre</th>
+                                            <th scope="col" class="text-primary">Cargo</th>
+                                            <th scope="col" class="text-primary">CI</th>
+                                            <th scope="col" class="text-primary">Telefono</th>
+                                            <th scope="col" class="text-primary">Email</th>
+                                            <th scope="col" class="text-primary">Fecha de nacimiento</th>
+                                            <th scope="col" class="text-primary">Fecha de ingreso</th>
+                                            <th scope="col" class="text-primary">Direccion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for x in contratistas %}
+                                            <tr>
+                                                <th scope="row" class="text-secondary">Contratistas</th>
+                                                <td>{{ x.EmployeeName }}</td>
+                                                <td>{{ x.EmployeeCharge }}</td>
+                                                <td>{{ x.EmployeeCI }}</td>
+                                                <td>{{ x.EmployeeNumber }}</td>
+                                                <td>{{ x.EmployeeEmail }}</td>
+                                                <td>{{ x.EmployeeBirthday }}</td>
+                                                <td>{{ x.EmployeeAdmission }}</td>
+                                                <td>{{ x.EmployeeAddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- End Recent Sales -->
+                    </div>
+                </div>
+            </div>
+            </div><!-- End Reports -->
+
+
+            </div>
+            </div><!-- End Left side columns -->
+
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}

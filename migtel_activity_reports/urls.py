@@ -17,6 +17,37 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import reports.views
+from reports import views
+from django.conf.urls import handler404
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from reports.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+# from rest_framework.authtoken import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', views.login_view, name='login'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('logout/', views.logout_view, name='logout'),
+    path('', views.home, name='home'),
+    path('logs/', views.logs, name='logs'),
+    path('charts/', views.charts, name='charts'),
+    path('intranet/', views.intranet, name='intranet'),
+    path('departments/', views.departments, name='departments'),
+    path('celdas/', views.celdas, name='celdas'),
+    path('activity/', views.activity, name='activity'),
+    path('assignment/', views.assignment, name='assignment')
 ]
+
+# handler404 = 'push.views.error_404_view'
+handler404 = reports.views.handle_not_found
+
+admin.site.site_url = '/dashboard/'
+admin.site.site_header = 'Migtel - Soportes'
+admin.site.site_title = 'Admin | Soportes'
+admin.site.index_title = 'Admin Panel'
+
+# urlpatterns += staticfiles_urlpatterns()
